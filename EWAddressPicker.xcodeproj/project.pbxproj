@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79AF687121378BB6005166A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF687021378BB6005166A8 /* AppDelegate.swift */; };
+		79AF687321378BB6005166A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF687221378BB6005166A8 /* ViewController.swift */; };
+		79AF687621378BB6005166A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AF687421378BB6005166A8 /* Main.storyboard */; };
+		79AF687821378BBA005166A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79AF687721378BBA005166A8 /* Assets.xcassets */; };
+		79AF687B21378BBA005166A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AF687921378BBA005166A8 /* LaunchScreen.storyboard */; };
+		79AF688621378BBA005166A8 /* EWAddressPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF688521378BBA005166A8 /* EWAddressPickerTests.swift */; };
+		79AF689121378BBA005166A8 /* EWAddressPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF689021378BBA005166A8 /* EWAddressPickerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79AF688221378BBA005166A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79AF686521378BB6005166A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79AF686C21378BB6005166A8;
+			remoteInfo = EWAddressPicker;
+		};
+		79AF688D21378BBA005166A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79AF686521378BB6005166A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79AF686C21378BB6005166A8;
+			remoteInfo = EWAddressPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		79AF686D21378BB6005166A8 /* EWAddressPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EWAddressPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AF687021378BB6005166A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79AF687221378BB6005166A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79AF687521378BB6005166A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		79AF687721378BBA005166A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79AF687A21378BBA005166A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79AF687C21378BBA005166A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79AF688121378BBA005166A8 /* EWAddressPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EWAddressPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AF688521378BBA005166A8 /* EWAddressPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWAddressPickerTests.swift; sourceTree = "<group>"; };
+		79AF688721378BBA005166A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79AF688C21378BBA005166A8 /* EWAddressPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EWAddressPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AF689021378BBA005166A8 /* EWAddressPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWAddressPickerUITests.swift; sourceTree = "<group>"; };
+		79AF689221378BBA005166A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79AF686A21378BB6005166A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AF687E21378BBA005166A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AF688921378BBA005166A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		79AF686421378BB6005166A8 = {
+			isa = PBXGroup;
+			children = (
+				79AF686F21378BB6005166A8 /* EWAddressPicker */,
+				79AF688421378BBA005166A8 /* EWAddressPickerTests */,
+				79AF688F21378BBA005166A8 /* EWAddressPickerUITests */,
+				79AF686E21378BB6005166A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79AF686E21378BB6005166A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79AF686D21378BB6005166A8 /* EWAddressPicker.app */,
+				79AF688121378BBA005166A8 /* EWAddressPickerTests.xctest */,
+				79AF688C21378BBA005166A8 /* EWAddressPickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79AF686F21378BB6005166A8 /* EWAddressPicker */ = {
+			isa = PBXGroup;
+			children = (
+				79AF687021378BB6005166A8 /* AppDelegate.swift */,
+				79AF687221378BB6005166A8 /* ViewController.swift */,
+				79AF687421378BB6005166A8 /* Main.storyboard */,
+				79AF687721378BBA005166A8 /* Assets.xcassets */,
+				79AF687921378BBA005166A8 /* LaunchScreen.storyboard */,
+				79AF687C21378BBA005166A8 /* Info.plist */,
+			);
+			path = EWAddressPicker;
+			sourceTree = "<group>";
+		};
+		79AF688421378BBA005166A8 /* EWAddressPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				79AF688521378BBA005166A8 /* EWAddressPickerTests.swift */,
+				79AF688721378BBA005166A8 /* Info.plist */,
+			);
+			path = EWAddressPickerTests;
+			sourceTree = "<group>";
+		};
+		79AF688F21378BBA005166A8 /* EWAddressPickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				79AF689021378BBA005166A8 /* EWAddressPickerUITests.swift */,
+				79AF689221378BBA005166A8 /* Info.plist */,
+			);
+			path = EWAddressPickerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79AF686C21378BB6005166A8 /* EWAddressPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79AF689521378BBA005166A8 /* Build configuration list for PBXNativeTarget "EWAddressPicker" */;
+			buildPhases = (
+				79AF686921378BB6005166A8 /* Sources */,
+				79AF686A21378BB6005166A8 /* Frameworks */,
+				79AF686B21378BB6005166A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EWAddressPicker;
+			productName = EWAddressPicker;
+			productReference = 79AF686D21378BB6005166A8 /* EWAddressPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79AF688021378BBA005166A8 /* EWAddressPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79AF689821378BBA005166A8 /* Build configuration list for PBXNativeTarget "EWAddressPickerTests" */;
+			buildPhases = (
+				79AF687D21378BBA005166A8 /* Sources */,
+				79AF687E21378BBA005166A8 /* Frameworks */,
+				79AF687F21378BBA005166A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79AF688321378BBA005166A8 /* PBXTargetDependency */,
+			);
+			name = EWAddressPickerTests;
+			productName = EWAddressPickerTests;
+			productReference = 79AF688121378BBA005166A8 /* EWAddressPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		79AF688B21378BBA005166A8 /* EWAddressPickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79AF689B21378BBA005166A8 /* Build configuration list for PBXNativeTarget "EWAddressPickerUITests" */;
+			buildPhases = (
+				79AF688821378BBA005166A8 /* Sources */,
+				79AF688921378BBA005166A8 /* Frameworks */,
+				79AF688A21378BBA005166A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79AF688E21378BBA005166A8 /* PBXTargetDependency */,
+			);
+			name = EWAddressPickerUITests;
+			productName = EWAddressPickerUITests;
+			productReference = 79AF688C21378BBA005166A8 /* EWAddressPickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79AF686521378BB6005166A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Ethan;
+				TargetAttributes = {
+					79AF686C21378BB6005166A8 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					79AF688021378BBA005166A8 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 79AF686C21378BB6005166A8;
+					};
+					79AF688B21378BBA005166A8 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 79AF686C21378BB6005166A8;
+					};
+				};
+			};
+			buildConfigurationList = 79AF686821378BB6005166A8 /* Build configuration list for PBXProject "EWAddressPicker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 79AF686421378BB6005166A8;
+			productRefGroup = 79AF686E21378BB6005166A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79AF686C21378BB6005166A8 /* EWAddressPicker */,
+				79AF688021378BBA005166A8 /* EWAddressPickerTests */,
+				79AF688B21378BBA005166A8 /* EWAddressPickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79AF686B21378BB6005166A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AF687B21378BBA005166A8 /* LaunchScreen.storyboard in Resources */,
+				79AF687821378BBA005166A8 /* Assets.xcassets in Resources */,
+				79AF687621378BB6005166A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AF687F21378BBA005166A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AF688A21378BBA005166A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79AF686921378BB6005166A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AF687321378BB6005166A8 /* ViewController.swift in Sources */,
+				79AF687121378BB6005166A8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AF687D21378BBA005166A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AF688621378BBA005166A8 /* EWAddressPickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79AF688821378BBA005166A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AF689121378BBA005166A8 /* EWAddressPickerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79AF688321378BBA005166A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79AF686C21378BB6005166A8 /* EWAddressPicker */;
+			targetProxy = 79AF688221378BBA005166A8 /* PBXContainerItemProxy */;
+		};
+		79AF688E21378BBA005166A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79AF686C21378BB6005166A8 /* EWAddressPicker */;
+			targetProxy = 79AF688D21378BBA005166A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		79AF687421378BB6005166A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79AF687521378BB6005166A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		79AF687921378BBA005166A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79AF687A21378BBA005166A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		79AF689321378BBA005166A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		79AF689421378BBA005166A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79AF689621378BBA005166A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				INFOPLIST_FILE = EWAddressPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79AF689721378BBA005166A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				INFOPLIST_FILE = EWAddressPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		79AF689921378BBA005166A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				INFOPLIST_FILE = EWAddressPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EWAddressPicker.app/EWAddressPicker";
+			};
+			name = Debug;
+		};
+		79AF689A21378BBA005166A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				INFOPLIST_FILE = EWAddressPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EWAddressPicker.app/EWAddressPicker";
+			};
+			name = Release;
+		};
+		79AF689C21378BBA005166A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				INFOPLIST_FILE = EWAddressPickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EWAddressPicker;
+			};
+			name = Debug;
+		};
+		79AF689D21378BBA005166A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				INFOPLIST_FILE = EWAddressPickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EWAddressPicker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79AF686821378BB6005166A8 /* Build configuration list for PBXProject "EWAddressPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AF689321378BBA005166A8 /* Debug */,
+				79AF689421378BBA005166A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79AF689521378BBA005166A8 /* Build configuration list for PBXNativeTarget "EWAddressPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AF689621378BBA005166A8 /* Debug */,
+				79AF689721378BBA005166A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79AF689821378BBA005166A8 /* Build configuration list for PBXNativeTarget "EWAddressPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AF689921378BBA005166A8 /* Debug */,
+				79AF689A21378BBA005166A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79AF689B21378BBA005166A8 /* Build configuration list for PBXNativeTarget "EWAddressPickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79AF689C21378BBA005166A8 /* Debug */,
+				79AF689D21378BBA005166A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79AF686521378BB6005166A8 /* Project object */;
+}
