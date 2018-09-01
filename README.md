@@ -19,6 +19,5 @@ controller消失时:背景渐变消失,地址选择器向下退出.
 <br>
 <br>
 <br>
-自己学习一直闭门造车,欢迎各位同僚与我交流.<br>
-<img src="https://github.com/WangLiquan/EWAddressPicker/raw/master/images/wechat.jpg" width="30%" height="30%"><br>
-添加请备注github
+个人新建一个上海程序员交流群,希望与大家多认识多交流,有兴趣请扫码加群.<br>
+<img src="https://github.com/WangLiquan/popView/raw/master/images/qq.jpg" width="30%" height="30%"><br>
