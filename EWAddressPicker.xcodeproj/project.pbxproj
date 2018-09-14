@@ -88,6 +88,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79871F53214B46F5005B2DEF /* EWAddressPicker */ = {
+			isa = PBXGroup;
+			children = (
+				79AF68B02137D4E9005166A8 /* area.plist */,
+				79AF68A021379086005166A8 /* CommonHelper.swift */,
+				79AF68B22137D612005166A8 /* EWAddressViewController.swift */,
+				79AF68B42137D681005166A8 /* EWAddressPresentAnimated.swift */,
+				79AF68AC2137D0B2005166A8 /* EWAddressModel.swift */,
+				79AF68AE2137D472005166A8 /* EWAddressPickViewTableViewCell.swift */,
+				79AF689E21378CD3005166A8 /* EWAddressPickView.swift */,
+			);
+			path = EWAddressPicker;
+			sourceTree = "<group>";
+		};
 		79AF686421378BB6005166A8 = {
 			isa = PBXGroup;
 			children = (
@@ -111,16 +125,10 @@
 		79AF686F21378BB6005166A8 /* EWAddressPicker */ = {
 			isa = PBXGroup;
 			children = (
-				79AF68A021379086005166A8 /* CommonHelper.swift */,
+				79871F53214B46F5005B2DEF /* EWAddressPicker */,
 				79AF687021378BB6005166A8 /* AppDelegate.swift */,
 				79AF687221378BB6005166A8 /* ViewController.swift */,
-				79AF68B42137D681005166A8 /* EWAddressPresentAnimated.swift */,
-				79AF68B22137D612005166A8 /* EWAddressViewController.swift */,
-				79AF68AC2137D0B2005166A8 /* EWAddressModel.swift */,
-				79AF68AE2137D472005166A8 /* EWAddressPickViewTableViewCell.swift */,
-				79AF689E21378CD3005166A8 /* EWAddressPickView.swift */,
 				79AF687421378BB6005166A8 /* Main.storyboard */,
-				79AF68B02137D4E9005166A8 /* area.plist */,
 				79AF687721378BBA005166A8 /* Assets.xcassets */,
 				79AF687921378BBA005166A8 /* LaunchScreen.storyboard */,
 				79AF687C21378BBA005166A8 /* Info.plist */,

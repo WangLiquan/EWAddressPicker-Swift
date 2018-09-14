@@ -15,3 +15,16 @@ controller消失时:背景渐变消失,地址选择器向下退出.
 <br>
 
 ![效果图预览](https://github.com/WangLiquan/EWAddressPicker/raw/master/images/demonstration.gif)
+
+# 使用方法:
+将EWAddressPicker拖入项目,需要调用
+```
+let addressPicker = EWAddressViewController()
+addressPicker.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+// block返回选择数据,address:完整地址,province:省,city:市,area:区
+addressPicker.backLocationStringController = { (address,province,city,area) in
+    ///在此使用返回数据
+    self.label.text = address
+}
+self.present(addressPicker, animated: true, completion: nil)
+```
