@@ -15,7 +15,6 @@
 		79AF688621378BBA005166A8 /* EWAddressPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF688521378BBA005166A8 /* EWAddressPickerTests.swift */; };
 		79AF689121378BBA005166A8 /* EWAddressPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF689021378BBA005166A8 /* EWAddressPickerUITests.swift */; };
 		79AF689F21378CD3005166A8 /* EWAddressPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF689E21378CD3005166A8 /* EWAddressPickView.swift */; };
-		79AF68A121379086005166A8 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF68A021379086005166A8 /* CommonHelper.swift */; };
 		79AF68AD2137D0B2005166A8 /* EWAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF68AC2137D0B2005166A8 /* EWAddressModel.swift */; };
 		79AF68AF2137D472005166A8 /* EWAddressPickViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF68AE2137D472005166A8 /* EWAddressPickViewTableViewCell.swift */; };
 		79AF68B12137D4E9005166A8 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79AF68B02137D4E9005166A8 /* area.plist */; };
@@ -55,7 +54,6 @@
 		79AF689021378BBA005166A8 /* EWAddressPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWAddressPickerUITests.swift; sourceTree = "<group>"; };
 		79AF689221378BBA005166A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79AF689E21378CD3005166A8 /* EWAddressPickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWAddressPickView.swift; sourceTree = "<group>"; };
-		79AF68A021379086005166A8 /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
 		79AF68AC2137D0B2005166A8 /* EWAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWAddressModel.swift; sourceTree = "<group>"; };
 		79AF68AE2137D472005166A8 /* EWAddressPickViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickViewTableViewCell.swift; sourceTree = "<group>"; };
 		79AF68B02137D4E9005166A8 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				79AF68B02137D4E9005166A8 /* area.plist */,
-				79AF68A021379086005166A8 /* CommonHelper.swift */,
 				79AF68B22137D612005166A8 /* EWAddressViewController.swift */,
 				79AF68B42137D681005166A8 /* EWAddressPresentAnimated.swift */,
 				79AF68AC2137D0B2005166A8 /* EWAddressModel.swift */,
@@ -292,7 +289,6 @@
 				79AF689F21378CD3005166A8 /* EWAddressPickView.swift in Sources */,
 				79AF687321378BB6005166A8 /* ViewController.swift in Sources */,
 				79AF68B52137D681005166A8 /* EWAddressPresentAnimated.swift in Sources */,
-				79AF68A121379086005166A8 /* CommonHelper.swift in Sources */,
 				79AF687121378BB6005166A8 /* AppDelegate.swift in Sources */,
 				79AF68AF2137D472005166A8 /* EWAddressPickViewTableViewCell.swift in Sources */,
 			);

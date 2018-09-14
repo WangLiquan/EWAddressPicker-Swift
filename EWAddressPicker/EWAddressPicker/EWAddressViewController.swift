@@ -13,7 +13,7 @@ class EWAddressViewController: UIViewController {
     var backLocationStringController: ((String,String,String,String)->())?
 
     lazy var containV: EWAddressPickView = {
-        let view = EWAddressPickView(frame: CGRect(x: 0, y: ScreenInfo.Height-550, width: ScreenInfo.Width, height: 550))
+        let view = EWAddressPickView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 550, width: UIScreen.main.bounds.width, height: 550))
         view.backOnClickCancel = {
             self.onClickCancel()
         }

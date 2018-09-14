@@ -14,7 +14,7 @@ class EWAddressPickViewTableViewCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel(frame: CGRect(x: 42, y: 8, width: 200, height: 24))
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.x333333
+        label.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
         return label
     }()
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -37,7 +37,7 @@ class EWAddressPickViewFirstTableViewCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel(frame: CGRect(x: 24, y: 11.5, width: 100, height: 17))
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = UIColor.x666666
+        label.textColor = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
         return label
     }()
 

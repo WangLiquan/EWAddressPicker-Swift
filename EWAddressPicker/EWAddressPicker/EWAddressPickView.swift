@@ -26,7 +26,7 @@ class EWAddressPickView: UIView {
             case .provinces:
                 /// 选择省份时,有上面的热门城市view.没有滚动选择type的titleScrollView.没有已选择label.
                 self.tableView.tableHeaderView = tableViewHeaderView
-                self.tableView.frame = CGRect(x: 0, y: 42, width: ScreenInfo.Width, height: 458)
+                self.tableView.frame = CGRect(x: 0, y: 42, width: UIScreen.main.bounds.width, height: 458)
                 self.titleSV.isHidden = true
                 self.leftLabel.isHidden = true
                 /// 将所有选中数据清空
@@ -50,7 +50,7 @@ class EWAddressPickView: UIView {
             case .city:
                 /// 选择城市时没有热门城市view,并将titleSV显示出来
                 self.tableView.tableHeaderView = UIView()
-                self.tableView.frame = CGRect(x: 0, y: 136, width: ScreenInfo.Width, height: 367)
+                self.tableView.frame = CGRect(x: 0, y: 136, width: UIScreen.main.bounds.width, height: 367)
                 self.titleSV.isHidden = false
                 self.leftLabel.isHidden = false
                 /// 将省份选择保留,将城市与地区数据清空
@@ -78,7 +78,7 @@ class EWAddressPickView: UIView {
             case .area:
                 /// 选择地区时没有上方热门城市View,有titleSV
                 self.tableView.tableHeaderView = UIView()
-                self.tableView.frame = CGRect(x: 0, y: 136, width: ScreenInfo.Width, height: 367)
+                self.tableView.frame = CGRect(x: 0, y: 136, width: UIScreen.main.bounds.width, height: 367)
                 self.titleSV.isHidden = false
                 self.leftLabel.isHidden = false
                 /// 通过修改titleSV中button的选中状态来修改它的颜色
@@ -131,22 +131,22 @@ class EWAddressPickView: UIView {
     /// 当前tableView使用的数据源
     var dataArray: Array<String>?
     let titleLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: (ScreenInfo.Width - 100) / 2, y: 9, width: 100, height: 24))
-        label.textColor = UIColor.x333333
+        let label = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - 100) / 2, y: 9, width: 100, height: 24))
+        label.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
         label.text = "选择国家地区"
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     let rightCancelButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: ScreenInfo.Width - 42, y: 11, width: 18, height: 18))
+        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 42, y: 11, width: 18, height: 18))
         button.setImage(UIImage(named: "BaseVC_cancel"), for: .normal)
         return button
     }()
     let leftLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 24, y: 43, width: 40, height: 18))
         label.text = "已选择"
-        label.textColor = UIColor.x666666
+        label.textColor = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 12)
         label.isHidden = true
         return label
@@ -154,16 +154,16 @@ class EWAddressPickView: UIView {
     /// 热门城市数组,可修改,若修改数量需要修改下方tableViewHeaderView.frame;若修改城市需要修改onClickHotCity()方法来实现点击跳转功能
     let hotCityArray = ["北京","上海","广州","深圳","杭州","南京","苏州","天津","武汉","长沙","重庆","成都"]
     lazy var tableViewHeaderView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: ScreenInfo.Width, height: 160))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 160))
         let label = UILabel(frame: CGRect(x: 24, y: 0, width: 50, height: 18))
-        label.textColor = UIColor.x666666
+        label.textColor = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 12)
         label.text = "热门城市"
         view.addSubview(label)
         for i in 0..<12 {
             let button: UIButton = UIButton(frame: CGRect(x: CGFloat(24 + 80 * (i % 4)), y: CGFloat(28 + 40 * (i / 4)), width: 80, height: 40))
             button.setTitle(hotCityArray[i], for: .normal)
-            button.setTitleColor(UIColor.x666666, for: .normal)
+            button.setTitleColor(UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1), for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             button.addTarget(self, action: #selector(onClickHotCity(sender:)), for: .touchUpInside)
             button.tag = i
@@ -175,7 +175,7 @@ class EWAddressPickView: UIView {
     private var titleSV: UIScrollView!
     /// titleSV上button下的滚动线
     private var underLine = UIView()
-    var tableView = UITableView(frame: CGRect(x: 0, y:42 , width: ScreenInfo.Width, height: 458))
+    var tableView = UITableView(frame: CGRect(x: 0, y:42 , width: UIScreen.main.bounds.width, height: 458))
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -200,19 +200,19 @@ class EWAddressPickView: UIView {
             titleSV.removeFromSuperview()
         }
         buttonArr = []
-        titleSV = UIScrollView(frame: CGRect(x: 0, y: 72, width: ScreenInfo.Width, height: 44))
+        titleSV = UIScrollView(frame: CGRect(x: 0, y: 72, width: UIScreen.main.bounds.width, height: 44))
         self.underLine = UIView(frame: CGRect(x: 0, y: 40, width: 30, height: 2))
-        self.underLine.backgroundColor = UIColor.x4FB0FF
+        self.underLine.backgroundColor = UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1)
         for i in 0..<3{
-            let button = UIButton(frame: CGRect(x: 24 + CGFloat(i) * (ScreenInfo.Width - 47) / 3, y: 0, width: ScreenInfo.Width / 3, height: 44))
+            let button = UIButton(frame: CGRect(x: 24 + CGFloat(i) * (UIScreen.main.bounds.width - 47) / 3, y: 0, width: UIScreen.main.bounds.width / 3, height: 44))
             button.tag = Int(i)
             if i == 1 {
                 button.isSelected = true
                 underLine.center.x = button.center.x
             }
             button.setTitle("请选择", for: .normal)
-            button.setTitleColor(UIColor.x333333, for: .normal)
-            button.setTitleColor(UIColor.x4FB0FF, for: .selected)
+            button.setTitleColor(UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1), for: .normal)
+            button.setTitleColor(UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1), for: .selected)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.addTarget(self, action: #selector(onClickTitlebutton(sender:)), for: .touchUpInside)
@@ -221,7 +221,7 @@ class EWAddressPickView: UIView {
         }
         titleSV.showsVerticalScrollIndicator = false
         titleSV.addSubview(self.underLine)
-        titleSV.contentSize = CGSize(width: ScreenInfo.Width, height: 44)
+        titleSV.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 44)
         titleSV.isHidden = true
         self.addSubview(titleSV)
     }

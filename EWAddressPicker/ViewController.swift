@@ -11,16 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     let label: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 250, width: ScreenInfo.Width - 100, height: 50))
+        let label = UILabel(frame: CGRect(x: 50, y: 250, width: UIScreen.main.bounds.width - 100, height: 50))
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.backgroundColor = UIColor.colorWithRGBA(r: 255, g: 51, b: 102, a: 1)
+        label.backgroundColor = UIColor(red: 255/255, green: 51/255, blue: 102/255, alpha: 1)
         return label
     }()
     let button: UIButton = {
-        let button = UIButton(frame: CGRect(x: 100, y: 450, width: ScreenInfo.Width - 200, height: 50))
+        let button = UIButton(frame: CGRect(x: 100, y: 450, width: UIScreen.main.bounds.width - 200, height: 50))
         button.addTarget(self, action: #selector(onClickSelectButton), for: .touchUpInside)
-        button.setTitleColor(UIColor.colorWithRGBA(r: 255, g: 51, b: 102, a: 1), for: .normal)
+        button.setTitleColor(UIColor(red: 255/255, green: 51/255, blue: 102/255, alpha: 1), for: .normal)
         button.setTitle("选择地址", for: .normal)
         return button
     }()
