@@ -34,7 +34,9 @@ class ViewController: UIViewController {
 
     @objc func onClickSelectButton(){
         let addressPicker = EWAddressViewController()
-        addressPicker.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        /*** 可使用这种init方法自定制选中颜色,不填写selectColor默认颜色为UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1),蓝色
+        let addressPicker = EWAddressViewController(selectColor: UIColor.yellow)
+         */
         // 返回选择数据,地址,省,市,区
         addressPicker.backLocationStringController = { (address,province,city,area) in
             self.label.text = address

@@ -7,13 +7,17 @@
 //
 
 import UIKit
+///默认选中颜色
+let defaultColor = UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1)
 
 class EWAddressViewController: UIViewController {
 
-    var backLocationStringController: ((String,String,String,String)->())?
+    public var backLocationStringController: ((String,String,String,String)->())?
+    ///title选中颜色
+    public var selectColor: UIColor
 
-    lazy var containV: EWAddressPickView = {
-        let view = EWAddressPickView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 550, width: UIScreen.main.bounds.width, height: 550))
+    public lazy var containV: EWAddressPickView = {
+        let view = EWAddressPickView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 550, width: UIScreen.main.bounds.width, height: 550),selectColor: selectColor)
         view.backOnClickCancel = {
             self.onClickCancel()
         }
@@ -26,17 +30,27 @@ class EWAddressViewController: UIViewController {
         }
         return view
     }()
-    var backgroundView:UIView = {
+    public var backgroundView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         return view
     }()
+
+    init(selectColor: UIColor = defaultColor) {
+        self.selectColor = selectColor
+        super.init(nibName: nil, bundle: nil)
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         drawMyView()
         // Do any additional setup after loading the view.
     }
-    func drawMyView()   {
+    private func drawMyView()   {
         self.view.insertSubview(self.backgroundView, at: 0)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
@@ -53,7 +67,7 @@ class EWAddressViewController: UIViewController {
     }
 
     //MARK: onClick
-    @objc func onClickCancel() {
+    @objc private func onClickCancel() {
         self.dismiss(animated: true, completion: nil)
     }
 

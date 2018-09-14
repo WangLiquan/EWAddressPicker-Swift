@@ -16,9 +16,11 @@ enum EWLocationPickViewTableViewType {
 
 class EWAddressPickView: UIView {
     /// 返回数据回调
-    var backLocationString: ((String,String,String,String)->())?
+    public var backLocationString: ((String,String,String,String)->())?
     /// 推出回调
-    var backOnClickCancel: (()->())?
+    public var backOnClickCancel: (()->())?
+    /// title选中以及下滑线颜色
+    public var selectColor: UIColor 
 
     private var tableViewType: EWLocationPickViewTableViewType = .provinces{
         didSet{
@@ -177,7 +179,8 @@ class EWAddressPickView: UIView {
     private var underLine = UIView()
     var tableView = UITableView(frame: CGRect(x: 0, y:42 , width: UIScreen.main.bounds.width, height: 458))
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, selectColor: UIColor) {
+        self.selectColor = selectColor
         super.init(frame: frame)
         initLocationData()
         drawMyView()
@@ -202,7 +205,7 @@ class EWAddressPickView: UIView {
         buttonArr = []
         titleSV = UIScrollView(frame: CGRect(x: 0, y: 72, width: UIScreen.main.bounds.width, height: 44))
         self.underLine = UIView(frame: CGRect(x: 0, y: 40, width: 30, height: 2))
-        self.underLine.backgroundColor = UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1)
+        self.underLine.backgroundColor = selectColor
         for i in 0..<3{
             let button = UIButton(frame: CGRect(x: 24 + CGFloat(i) * (UIScreen.main.bounds.width - 47) / 3, y: 0, width: UIScreen.main.bounds.width / 3, height: 44))
             button.tag = Int(i)
@@ -212,7 +215,7 @@ class EWAddressPickView: UIView {
             }
             button.setTitle("请选择", for: .normal)
             button.setTitleColor(UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1), for: .normal)
-            button.setTitleColor(UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1), for: .selected)
+            button.setTitleColor(selectColor, for: .selected)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.addTarget(self, action: #selector(onClickTitlebutton(sender:)), for: .touchUpInside)
