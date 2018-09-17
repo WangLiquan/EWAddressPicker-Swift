@@ -69,12 +69,10 @@ class EWAddressPickView: UIView {
                         button.isSelected = true
                     }
                 }
-
                 /// 滚动titleSV中button下滚动的Line
                 UIView.animate(withDuration: 0.3, animations: {() -> Void in
                     self.underLine.center = CGPoint(x: self.buttonArr[1].center.x, y: self.underLine.center.y)
                 })
-
                 self.dataArray = provincesModel?.cityArray
                 self.tableView.reloadData()
             case .area:
@@ -102,7 +100,7 @@ class EWAddressPickView: UIView {
     /// titleSV上的三个button,通过array保存,更好操作
     private var buttonArr = [UIButton]()
     /// 已选中的省份
-    var selectedProvince = ""{
+    private var selectedProvince = ""{
         didSet{
             /// 当选中赋值时,将titleSV上第一个button.title改为省份名
             for button in buttonArr{
@@ -113,7 +111,7 @@ class EWAddressPickView: UIView {
         }
     }
     /// 已选中城市
-    var selectedCity = ""{
+    private var selectedCity = ""{
         didSet{
             /// 当选中赋值时,将titleSV上第二个button.title改为城市名
             for button in buttonArr{
@@ -123,16 +121,16 @@ class EWAddressPickView: UIView {
             }
         }
     }
-    var selectedArea = ""
+    private var selectedArea = ""
     /// 总城市数据
-    var locationModel: EWCountryModel?
+    private var locationModel: EWCountryModel?
     /// 省份数据
-    var provincesModel: EWProvincesModel?
+    private var provincesModel: EWProvincesModel?
     /// 城市数据
-    var cityModel: EWCityModel?
+    private var cityModel: EWCityModel?
     /// 当前tableView使用的数据源
-    var dataArray: Array<String>?
-    let titleLabel: UILabel = {
+    private var dataArray: Array<String>?
+    private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - 100) / 2, y: 9, width: 100, height: 24))
         label.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
         label.text = "选择国家地区"
@@ -140,12 +138,12 @@ class EWAddressPickView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
-    let rightCancelButton: UIButton = {
+    private let rightCancelButton: UIButton = {
         let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 42, y: 11, width: 18, height: 18))
         button.setImage(UIImage(named: "BaseVC_cancel"), for: .normal)
         return button
     }()
-    let leftLabel: UILabel = {
+    private let leftLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 24, y: 43, width: 40, height: 18))
         label.text = "已选择"
         label.textColor = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
@@ -154,8 +152,8 @@ class EWAddressPickView: UIView {
         return label
     }()
     /// 热门城市数组,可修改,若修改数量需要修改下方tableViewHeaderView.frame;若修改城市需要修改onClickHotCity()方法来实现点击跳转功能
-    let hotCityArray = ["北京","上海","广州","深圳","杭州","南京","苏州","天津","武汉","长沙","重庆","成都"]
-    lazy var tableViewHeaderView: UIView = {
+    private let hotCityArray = ["北京","上海","广州","深圳","杭州","南京","苏州","天津","武汉","长沙","重庆","成都"]
+    private lazy var tableViewHeaderView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 160))
         let label = UILabel(frame: CGRect(x: 24, y: 0, width: 50, height: 18))
         label.textColor = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
@@ -177,7 +175,7 @@ class EWAddressPickView: UIView {
     private var titleSV: UIScrollView!
     /// titleSV上button下的滚动线
     private var underLine = UIView()
-    var tableView = UITableView(frame: CGRect(x: 0, y:42 , width: UIScreen.main.bounds.width, height: 458))
+    private var tableView = UITableView(frame: CGRect(x: 0, y:42 , width: UIScreen.main.bounds.width, height: 458))
 
     init(frame: CGRect, selectColor: UIColor) {
         self.selectColor = selectColor
@@ -189,7 +187,7 @@ class EWAddressPickView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func drawMyView(){
+    private func drawMyView(){
         self.backgroundColor = UIColor.white
         buildTitleScrollView()
         drawTableView()
@@ -198,7 +196,7 @@ class EWAddressPickView: UIView {
         rightCancelButton.addTarget(self, action: #selector(onClickCancelButton), for: .touchUpInside)
         self.addSubview(leftLabel)
     }
-    func buildTitleScrollView() {
+    private func buildTitleScrollView() {
         if titleSV != nil {
             titleSV.removeFromSuperview()
         }
@@ -228,7 +226,7 @@ class EWAddressPickView: UIView {
         titleSV.isHidden = true
         self.addSubview(titleSV)
     }
-    func drawTableView(){
+    private func drawTableView(){
         self.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -239,12 +237,12 @@ class EWAddressPickView: UIView {
         tableView.register(EWAddressPickViewFirstTableViewCell.self, forCellReuseIdentifier: EWAddressPickViewFirstTableViewCell.identifier)
     }
     /// 退出
-    @objc func onClickCancelButton(){
+    @objc private func onClickCancelButton(){
         if self.backOnClickCancel != nil{
             backOnClickCancel!()
         }
     }
-    @objc func onClickHotCity(sender: UIButton){
+    @objc private func onClickHotCity(sender: UIButton){
         switch sender.tag {
         case 0:
             setHotCityData(province: "北京市", city: "北京市")
@@ -276,7 +274,7 @@ class EWAddressPickView: UIView {
         self.tableViewType = .area
     }
     /// 选择view.type
-    @objc func onClickTitlebutton(sender: UIButton){
+    @objc private func onClickTitlebutton(sender: UIButton){
         guard !sender.isSelected else { return }
         switch sender.tag {
         case 0:
@@ -288,14 +286,14 @@ class EWAddressPickView: UIView {
         }
     }
     /// 点击热门城市中的城市
-    func setHotCityData(province: String,city: String){
+    private func setHotCityData(province: String,city: String){
         self.provincesModel = self.locationModel?.countryDictionary[province]
         self.selectedProvince = province
         self.cityModel = self.provincesModel?.provincesDictionary[city]
         self.selectedCity = city
     }
     /// 从area.plist获取全部地区数据
-    func initLocationData(){
+    private func initLocationData(){
         let dic = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "area", ofType: "plist")!) as! Dictionary<String,Any>
         locationModel = EWCountryModel(dic: dic as! Dictionary<String, Dictionary<String, Array<String>>>)
         dataArray = locationModel?.provincesArray

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         let label = UILabel(frame: CGRect(x: 50, y: 250, width: UIScreen.main.bounds.width - 100, height: 50))
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.backgroundColor = UIColor(red: 255/255, green: 51/255, blue: 102/255, alpha: 1)
+        label.backgroundColor = UIColor(red: 255/255.0, green: 51/255, blue: 102/255, alpha: 1)
         return label
     }()
     let button: UIButton = {
