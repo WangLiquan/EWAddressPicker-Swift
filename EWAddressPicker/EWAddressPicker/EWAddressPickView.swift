@@ -17,7 +17,7 @@ enum EWLocationPickViewTableViewType {
 class EWAddressPickView: UIView {
     /// 返回数据回调
     public var backLocationString: ((String,String,String,String)->())?
-    /// 推出回调
+    /// 退出回调
     public var backOnClickCancel: (()->())?
     /// title选中以及下滑线颜色
     public var selectColor: UIColor 
