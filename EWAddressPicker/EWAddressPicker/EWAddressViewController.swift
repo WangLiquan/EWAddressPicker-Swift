@@ -12,7 +12,7 @@ let defaultColor = UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1)
 
 class EWAddressViewController: UIViewController {
 
-    public var backLocationStringController: ((String,String,String,String)->())?
+    public var backLocationStringController: ((String,String,String,String) -> Void)?
     ///title选中颜色
     public var selectColor: UIColor
 
@@ -23,7 +23,7 @@ class EWAddressViewController: UIViewController {
         }
         /// 成功选择后将数据回调,并推出视图
         view.backLocationString = { (address,province,city,area) in
-            if self.backLocationStringController != nil{
+            if self.backLocationStringController != nil {
                 self.backLocationStringController!(address,province,city,area)
                 self.onClickCancel()
             }
@@ -50,7 +50,7 @@ class EWAddressViewController: UIViewController {
         drawMyView()
         // Do any additional setup after loading the view.
     }
-    private func drawMyView()   {
+    private func drawMyView() {
         self.view.insertSubview(self.backgroundView, at: 0)
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
@@ -69,7 +69,7 @@ class EWAddressViewController: UIViewController {
         }
     }
 
-    //MARK: onClick
+    // MARK: onClick
     @objc private func onClickCancel() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -79,10 +79,9 @@ class EWAddressViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-//MARK: - 转场动画delegate
-extension EWAddressViewController:UIViewControllerTransitioningDelegate{
+// MARK: - 转场动画delegate
+extension EWAddressViewController:UIViewControllerTransitioningDelegate {
     /// 推入动画
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let animated = EWAddressPickerPresentAnimated(type: .present)
@@ -94,4 +93,3 @@ extension EWAddressViewController:UIViewControllerTransitioningDelegate{
         return animated
     }
 }
-

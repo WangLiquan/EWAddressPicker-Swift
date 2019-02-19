@@ -9,33 +9,32 @@
 import Foundation
 
 struct EWCountryModel {
-    var countryDictionary: Dictionary<String,EWProvincesModel> = [:]
+    var countryDictionary: [String:EWProvincesModel] = [:]
     var provincesArray: [String] = []
-    init(dic:Dictionary<String,Dictionary<String,Array<String>>>){
-        for (key,value) in dic{
+    init(dic: [String:[String:[String]]]) {
+        for (key,value) in dic {
             let model = EWProvincesModel(dic: value)
             countryDictionary[key] = model
             provincesArray.append(key)
         }
     }
 }
-struct EWProvincesModel{
-    var provincesDictionary: Dictionary<String,EWCityModel> = [:]
+struct EWProvincesModel {
+    var provincesDictionary: [String: EWCityModel] = [:]
     var cityArray: [String] = []
-    init(dic:Dictionary<String,Array<String>>){
-        for (key,value) in dic{
+    init(dic:[String: [String]]) {
+        for (key,value) in dic {
             let model = EWCityModel(Arr: value)
             provincesDictionary[key] = model
             cityArray.append(key)
         }
     }
 }
-struct EWCityModel{
-    var areaArray: Array<String> = []
-    init(Arr:Array<String>){
-        for str in Arr{
+struct EWCityModel {
+    var areaArray: [String] = []
+    init(Arr: [String]) {
+        for str in Arr {
             areaArray.append(str)
         }
     }
 }
-

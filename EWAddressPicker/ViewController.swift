@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @objc func onClickSelectButton(){
+    @objc func onClickSelectButton() {
         let addressPicker = EWAddressViewController()
         /*** 可使用这种init方法自定制选中颜色,不填写selectColor默认颜色为UIColor(red: 79/255, green: 176/255, blue: 255/255, alpha: 1),蓝色
         let addressPicker = EWAddressViewController(selectColor: UIColor.yellow)
@@ -48,6 +48,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-

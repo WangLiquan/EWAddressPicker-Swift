@@ -16,14 +16,14 @@ enum EWLocationPickViewTableViewType {
 
 class EWAddressPickView: UIView {
     /// 返回数据回调
-    public var backLocationString: ((String,String,String,String)->())?
+    public var backLocationString: ((String,String,String,String) -> Void)?
     /// 退出回调
-    public var backOnClickCancel: (()->())?
+    public var backOnClickCancel: (() -> Void)?
     /// title选中以及下滑线颜色
-    public var selectColor: UIColor 
+    public var selectColor: UIColor
 
-    private var tableViewType: EWLocationPickViewTableViewType = .provinces{
-        didSet{
+    private var tableViewType: EWLocationPickViewTableViewType = .provinces {
+        didSet {
             switch tableViewType {
             case .provinces:
                 /// 选择省份时,有上面的热门城市view.没有滚动选择type的titleScrollView.没有已选择label.
@@ -42,7 +42,7 @@ class EWAddressPickView: UIView {
                 for button in buttonArr {
                     button.setTitle("请选择", for: .normal)
                     button.isSelected = false
-                    if button.tag == 0{
+                    if button.tag == 0 {
                         button.isSelected = true
                     }
                 }
@@ -62,10 +62,10 @@ class EWAddressPickView: UIView {
                 /// 通过修改titleSV中button的选中状态来修改它的颜色
                 for button in buttonArr {
                     button.isSelected = false
-                    if button.tag != 0{
+                    if button.tag != 0 {
                         button.setTitle("请选择", for: .normal)
                     }
-                    if button.tag == 1{
+                    if button.tag == 1 {
                         button.isSelected = true
                     }
                 }
@@ -84,7 +84,7 @@ class EWAddressPickView: UIView {
                 /// 通过修改titleSV中button的选中状态来修改它的颜色
                 for button in buttonArr {
                     button.isSelected = false
-                    if button.tag == 2{
+                    if button.tag == 2 {
                         button.isSelected = true
                     }
                 }
@@ -101,23 +101,19 @@ class EWAddressPickView: UIView {
     private var buttonArr = [UIButton]()
     /// 已选中的省份
     private var selectedProvince = ""{
-        didSet{
+        didSet {
             /// 当选中赋值时,将titleSV上第一个button.title改为省份名
-            for button in buttonArr{
-                if button.tag == 0{
+            for button in buttonArr where button.tag == 0 {
                     button.setTitle(selectedProvince, for: .normal)
-                }
             }
         }
     }
     /// 已选中城市
     private var selectedCity = ""{
-        didSet{
+        didSet {
             /// 当选中赋值时,将titleSV上第二个button.title改为城市名
-            for button in buttonArr{
-                if button.tag == 1{
+            for button in buttonArr where button.tag == 1 {
                     button.setTitle(selectedCity, for: .normal)
-                }
             }
         }
     }
@@ -129,7 +125,7 @@ class EWAddressPickView: UIView {
     /// 城市数据
     private var cityModel: EWCityModel?
     /// 当前tableView使用的数据源
-    private var dataArray: Array<String>?
+    private var dataArray: [String]?
     private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - 100) / 2, y: 9, width: 100, height: 24))
         label.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
@@ -187,7 +183,7 @@ class EWAddressPickView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func drawMyView(){
+    private func drawMyView() {
         self.backgroundColor = UIColor.white
         buildTitleScrollView()
         drawTableView()
@@ -204,7 +200,7 @@ class EWAddressPickView: UIView {
         titleSV = UIScrollView(frame: CGRect(x: 0, y: 72, width: UIScreen.main.bounds.width, height: 44))
         self.underLine = UIView(frame: CGRect(x: 0, y: 40, width: 30, height: 2))
         self.underLine.backgroundColor = selectColor
-        for i in 0..<3{
+        for i in 0..<3 {
             let button = UIButton(frame: CGRect(x: 24 + CGFloat(i) * (UIScreen.main.bounds.width - 47) / 3, y: 0, width: UIScreen.main.bounds.width / 3, height: 44))
             button.tag = Int(i)
             if i == 1 {
@@ -226,7 +222,7 @@ class EWAddressPickView: UIView {
         titleSV.isHidden = true
         self.addSubview(titleSV)
     }
-    private func drawTableView(){
+    private func drawTableView() {
         self.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -237,12 +233,12 @@ class EWAddressPickView: UIView {
         tableView.register(EWAddressPickViewFirstTableViewCell.self, forCellReuseIdentifier: EWAddressPickViewFirstTableViewCell.identifier)
     }
     /// 退出
-    @objc private func onClickCancelButton(){
-        if self.backOnClickCancel != nil{
+    @objc private func onClickCancelButton() {
+        if self.backOnClickCancel != nil {
             backOnClickCancel!()
         }
     }
-    @objc private func onClickHotCity(sender: UIButton){
+    @objc private func onClickHotCity(sender: UIButton) {
         switch sender.tag {
         case 0:
             setHotCityData(province: "北京市", city: "北京市")
@@ -274,7 +270,7 @@ class EWAddressPickView: UIView {
         self.tableViewType = .area
     }
     /// 选择view.type
-    @objc private func onClickTitlebutton(sender: UIButton){
+    @objc private func onClickTitlebutton(sender: UIButton) {
         guard !sender.isSelected else { return }
         switch sender.tag {
         case 0:
@@ -286,20 +282,23 @@ class EWAddressPickView: UIView {
         }
     }
     /// 点击热门城市中的城市
-    private func setHotCityData(province: String,city: String){
+    private func setHotCityData(province: String,city: String) {
         self.provincesModel = self.locationModel?.countryDictionary[province]
         self.selectedProvince = province
         self.cityModel = self.provincesModel?.provincesDictionary[city]
         self.selectedCity = city
     }
     /// 从area.plist获取全部地区数据
-    private func initLocationData(){
-        let dic = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "area", ofType: "plist")!) as! Dictionary<String,Any>
-        locationModel = EWCountryModel(dic: dic as! Dictionary<String, Dictionary<String, Array<String>>>)
+    private func initLocationData() {
+        guard let dic = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "area", ofType: "plist") ?? "") as? [String:[String:[String]]] else {
+            return
+        }
+        locationModel = EWCountryModel(dic: dic)
         dataArray = locationModel?.provincesArray
     }
 }
-extension EWAddressPickView:UITableViewDelegate,UITableViewDataSource{
+//MARK: - tableViewDelegate
+extension EWAddressPickView:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
@@ -337,12 +336,10 @@ extension EWAddressPickView:UITableViewDelegate,UITableViewDataSource{
             /// 当前为选择地区状态时,保存选中地区,执行回调block.将选中数据回调
             selectedArea = self.dataArray![indexPath.row - 1]
             let selectLocation = selectedProvince + " " + selectedCity + " " + selectedArea
-            if backLocationString != nil{
+            if backLocationString != nil {
                 backLocationString!(selectLocation,selectedProvince,selectedCity,selectedArea)
             }
-            break
         }
 
     }
 }
-

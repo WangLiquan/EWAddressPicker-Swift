@@ -30,7 +30,9 @@ class EWAddressPickerPresentAnimated: NSObject,UIViewControllerAnimatedTransitio
 
         switch type {
         case .present:
-            let toVC : EWAddressViewController = transitionContext.viewController(forKey: .to) as! EWAddressViewController
+            guard let toVC: EWAddressViewController = transitionContext.viewController(forKey: .to) as? EWAddressViewController else {
+                return
+            }
             let toView = toVC.view
 
             let containerView = transitionContext.containerView
@@ -43,22 +45,24 @@ class EWAddressPickerPresentAnimated: NSObject,UIViewControllerAnimatedTransitio
                 toVC.backgroundView.alpha = 1.0
                 /// addresspicker向上推出
                 toVC.containV.transform =  CGAffineTransform(translationX: 0, y: -10)
-            }) { (finished) in
+            }) { (_) in
                 UIView.animate(withDuration: 0.2, animations: {
                     /// transform初始化
                     toVC.containV.transform = CGAffineTransform.identity
-                }, completion: { (finished) in
+                }, completion: { (_) in
                     transitionContext.completeTransition(true)
                 })
             }
         case .dismiss:
-            let toVC : EWAddressViewController = transitionContext.viewController(forKey: .from) as! EWAddressViewController
+            guard let toVC: EWAddressViewController = transitionContext.viewController(forKey: .from) as? EWAddressViewController else {
+                return
+            }
 
             UIView.animate(withDuration: 0.25, animations: {
                 toVC.backgroundView.alpha = 0.0
                 /// addresspicker向下推回
                 toVC.containV.transform =  CGAffineTransform(translationX: 0, y: (toVC.containV.frame.height))
-            }) { (finished) in
+            }) { (_) in
                 transitionContext.completeTransition(true)
             }
         }
