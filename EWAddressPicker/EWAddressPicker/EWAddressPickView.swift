@@ -239,6 +239,7 @@ class EWAddressPickView: UIView {
         }
     }
     @objc private func onClickHotCity(sender: UIButton) {
+        
         switch sender.tag {
         case 0:
             setHotCityData(province: "北京市", city: "北京市")
