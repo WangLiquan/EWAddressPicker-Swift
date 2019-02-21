@@ -221,13 +221,16 @@
 				TargetAttributes = {
 					79AF686C21378BB6005166A8 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 					79AF688021378BBA005166A8 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 79AF686C21378BB6005166A8;
 					};
 					79AF688B21378BBA005166A8 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 79AF686C21378BB6005166A8;
 					};
 				};
@@ -493,7 +496,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -511,7 +514,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -531,7 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EWAddressPicker.app/EWAddressPicker";
 			};
@@ -552,7 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EWAddressPicker.app/EWAddressPicker";
 			};
@@ -572,7 +575,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EWAddressPicker;
 			};
@@ -592,7 +595,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.EWAddressPickerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EWAddressPicker;
 			};

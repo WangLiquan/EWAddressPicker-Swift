@@ -17,7 +17,7 @@ class EWAddressPickViewTableViewCell: UITableViewCell {
         label.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
         return label
     }()
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         drawMyView()
@@ -41,7 +41,7 @@ class EWAddressPickViewFirstTableViewCell: UITableViewCell {
         return label
     }()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         drawMyView()
