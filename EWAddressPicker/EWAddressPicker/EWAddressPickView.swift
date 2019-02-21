@@ -239,35 +239,12 @@ class EWAddressPickView: UIView {
         }
     }
     @objc private func onClickHotCity(sender: UIButton) {
-        
-        switch sender.tag {
-        case 0:
-            setHotCityData(province: "北京市", city: "北京市")
-        case 1:
-            setHotCityData(province: "上海市", city: "上海市")
-        case 2:
-            setHotCityData(province: "广东省", city: "广州市")
-        case 3:
-            setHotCityData(province: "广东省", city: "深圳市")
-        case 4:
-            setHotCityData(province: "浙江省", city: "杭州市")
-        case 5:
-            setHotCityData(province: "江苏省", city: "南京市")
-        case 6:
-            setHotCityData(province: "江苏省", city: "苏州市")
-        case 7:
-            setHotCityData(province: "天津市", city: "天津市")
-        case 8:
-            setHotCityData(province: "湖北省", city: "武汉市")
-        case 9:
-            setHotCityData(province: "湖南省", city: "长沙市")
-        case 10:
-            setHotCityData(province: "重庆市", city: "重庆市")
-        case 11:
-            setHotCityData(province: "四川省", city: "成都市")
-        default:
-            break
-        }
+
+        let hotProvince = ["北京市","上海市","广东省","广东省","浙江省","江苏省","天津省","湖北省","湖南省","重庆市","四川省"]
+        let hotCity = ["北京市","上海市","广州市","深圳市","杭州市","南京市","苏州市","天津市","武汉市","长沙市","重庆市","成都市"]
+        let tag = sender.tag
+        setHotCityData(province: hotProvince[tag], city: hotCity[tag])
+
         self.tableViewType = .area
     }
     /// 选择view.type
@@ -298,7 +275,7 @@ class EWAddressPickView: UIView {
         dataArray = locationModel?.provincesArray
     }
 }
-//MARK: - tableViewDelegate
+// MARK: - tableViewDelegate
 extension EWAddressPickView:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
