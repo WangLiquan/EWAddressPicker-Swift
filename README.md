@@ -1,4 +1,6 @@
 # EWAddressPicker
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+
 Swift.地址选择器
 
 ## 实现效果:
