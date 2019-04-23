@@ -240,7 +240,7 @@ class EWAddressPickView: UIView {
     }
     @objc private func onClickHotCity(sender: UIButton) {
 
-        let hotProvince = ["北京市","上海市","广东省","广东省","浙江省","江苏省","天津省","湖北省","湖南省","重庆市","四川省"]
+        let hotProvince = ["北京市","上海市","广东省","广东省","浙江省","江苏省","江苏省","天津市","湖北省","湖南省","重庆市","四川省"]
         let hotCity = ["北京市","上海市","广州市","深圳市","杭州市","南京市","苏州市","天津市","武汉市","长沙市","重庆市","成都市"]
         let tag = sender.tag
         setHotCityData(province: hotProvince[tag], city: hotCity[tag])
