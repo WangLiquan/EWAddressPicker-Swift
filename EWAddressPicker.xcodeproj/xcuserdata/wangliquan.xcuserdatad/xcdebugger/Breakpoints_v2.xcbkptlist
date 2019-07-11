@@ -41,39 +41,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EWAddressPicker/EWAddressPicker/EWAddressPickView.swift"
-            timestampString = "577679563.066709"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "setHotCityData(province:city:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EWAddressPicker/EWAddressPicker/EWAddressPickView.swift"
-            timestampString = "577679563.066954"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "setHotCityData(province:city:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EWAddressPicker/EWAddressPicker/EWAddressPickView.swift"
-            timestampString = "577679563.067214"
+            timestampString = "584257655.2290291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -89,7 +57,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EWAddressPicker/EWAddressPicker/EWAddressPickView.swift"
-            timestampString = "577679563.067754"
+            timestampString = "584257655.229099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
