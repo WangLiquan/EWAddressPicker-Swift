@@ -19,13 +19,14 @@ class EWAddressViewController: UIViewController {
     public lazy var containV: EWAddressPickView = {
         let view = EWAddressPickView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 550, width: UIScreen.main.bounds.width, height: 550),selectColor: selectColor)
         view.backOnClickCancel = {
-            self.onClickCancel()
+            [weak self] in
+            self?.onClickCancel()
         }
         /// 成功选择后将数据回调,并推出视图
-        view.backLocationString = { (address,province,city,area) in
-            if self.backLocationStringController != nil {
-                self.backLocationStringController!(address,province,city,area)
-                self.onClickCancel()
+        view.backLocationString = {[weak self] (address,province,city,area) in
+            if self?.backLocationStringController != nil {
+                self?.backLocationStringController!(address,province,city,area)
+                self?.onClickCancel()
             }
         }
         return view
