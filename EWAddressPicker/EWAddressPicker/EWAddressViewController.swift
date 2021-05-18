@@ -15,9 +15,11 @@ class EWAddressViewController: UIViewController {
     public var backLocationStringController: ((String,String,String,String) -> Void)?
     ///title选中颜色
     public var selectColor: UIColor
+    public var selectProvince: String?
+    public var selectCity: String?
 
     public lazy var containV: EWAddressPickView = {
-        let view = EWAddressPickView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 550, width: UIScreen.main.bounds.width, height: 550),selectColor: selectColor)
+        let view = EWAddressPickView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 550, width: UIScreen.main.bounds.width, height: 550),selectColor: selectColor,selectedProvince: selectProvince,selectedCity: selectCity)
         view.backOnClickCancel = {
             self.onClickCancel()
         }
@@ -36,8 +38,10 @@ class EWAddressViewController: UIViewController {
         return view
     }()
 
-    init(selectColor: UIColor = defaultColor) {
+    init(selectColor: UIColor = defaultColor,selectProvince: String? = nil, selectCity: String? = nil) {
         self.selectColor = selectColor
+        self.selectProvince = selectProvince
+        self.selectCity = selectCity
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
     }

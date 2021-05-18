@@ -47,7 +47,9 @@ class EWAddressPickView: UIView {
                     }
                 }
                 self.underLine.center = CGPoint(x: self.buttonArr[1].center.x, y: self.underLine.center.y)
-                self.dataArray = locationModel?.provincesArray
+                self.dataArray = locationModel?.provincesArray.map({ model in
+                    model.provincesName
+                })
                 self.tableView.reloadData()
             case .city:
                 /// 选择城市时没有热门城市view,并将titleSV显示出来
@@ -73,7 +75,9 @@ class EWAddressPickView: UIView {
                 UIView.animate(withDuration: 0.3, animations: {() -> Void in
                     self.underLine.center = CGPoint(x: self.buttonArr[1].center.x, y: self.underLine.center.y)
                 })
-                self.dataArray = provincesModel?.cityArray
+                self.dataArray = provincesModel?.cityArray.map({ model in
+                    model.cityName
+                })
                 self.tableView.reloadData()
             case .area:
                 /// 选择地区时没有上方热门城市View,有titleSV
@@ -173,11 +177,12 @@ class EWAddressPickView: UIView {
     private var underLine = UIView()
     private var tableView = UITableView(frame: CGRect(x: 0, y:42 , width: UIScreen.main.bounds.width, height: 458))
 
-    init(frame: CGRect, selectColor: UIColor) {
+    init(frame: CGRect, selectColor: UIColor, selectedProvince: String? = nil, selectedCity: String? = nil) {
         self.selectColor = selectColor
         super.init(frame: frame)
         initLocationData()
         drawMyView()
+        setHotCityData(province: selectedProvince, city: selectedCity)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -260,11 +265,26 @@ class EWAddressPickView: UIView {
         }
     }
     /// 点击热门城市中的城市
-    private func setHotCityData(province: String,city: String) {
-        self.provincesModel = self.locationModel?.countryDictionary[province]
-        self.selectedProvince = province
-        self.cityModel = self.provincesModel?.provincesDictionary[city]
-        self.selectedCity = city
+    private func setHotCityData(province: String?,city: String?) {
+        if let province = province {
+           if let provincesModel = self.locationModel?.provincesArray.first(where: { model in
+                model.provincesName == province
+           }) {
+            self.provincesModel = provincesModel
+            self.selectedProvince = province
+            self.tableViewType = .city
+            if let city = city {
+              if let cityModel = self.provincesModel?.cityArray.first(where: { model in
+                    model.cityName == city
+              }) {
+                self.cityModel = cityModel
+                self.selectedCity = city
+                self.tableViewType = .area
+
+              }
+            }
+           }
+        }
     }
     /// 从area.plist获取全部地区数据
     private func initLocationData() {
@@ -272,7 +292,7 @@ class EWAddressPickView: UIView {
             return
         }
         locationModel = EWCountryModel(dic: dic)
-        dataArray = locationModel?.provincesArray
+        dataArray = locationModel?.provincesArray.map({$0.provincesName})
     }
 }
 // MARK: - tableViewDelegate
@@ -302,13 +322,13 @@ extension EWAddressPickView:UITableViewDelegate,UITableViewDataSource {
         switch tableViewType {
         case .provinces:
             /// 当前为选择省份状态时,保存选中省份,刷新状态为选择城市
-            selectedProvince = (self.locationModel?.provincesArray[indexPath.row - 1])!
-            self.provincesModel = self.locationModel?.countryDictionary[selectedProvince]
+            selectedProvince = self.locationModel?.provincesArray[indexPath.row - 1].provincesName ?? ""
+            self.provincesModel = self.locationModel?.provincesArray.first(where: {$0.provincesName == selectedProvince})
             self.tableViewType = .city
         case .city:
             /// 当前为选择城市状态时,保存选中城市,刷新状态为选择地区
-            selectedCity = (self.provincesModel?.cityArray[indexPath.row - 1])!
-            self.cityModel = self.provincesModel?.provincesDictionary[selectedCity]
+            selectedCity = (self.provincesModel?.cityArray[indexPath.row - 1])?.cityName ?? ""
+            self.cityModel = self.provincesModel?.cityArray.first(where: {$0.cityName == selectedCity})
             self.tableViewType = .area
         case .area:
             /// 当前为选择地区状态时,保存选中地区,执行回调block.将选中数据回调
